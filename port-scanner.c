@@ -52,7 +52,7 @@ int connection = connect(network_socket, (struct sockaddr *)&my_address, sizeof(
     if(connection == 0) {
     
     printf("OPEN PORT: %d\n", starting_range);
-    
+    close(network_socket);
     } else if (connection == -1) {
 
 	    perror("destination network unreachable...\n");
